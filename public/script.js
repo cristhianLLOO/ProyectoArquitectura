@@ -51,15 +51,19 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(textData);
             }
 
-            const responseData = JSON.parse(textData); // Luego intenta analizarlo como JSON
+            if (response.headers.get('Content-Type').includes('application/json')) {
+                const responseData = JSON.parse(textData); // Luego intenta analizarlo como JSON
 
-            if (editIndex >= 0) { // Si estamos en modo de edición
-                products[editIndex] = responseData;
-                updateProductInTable(editIndex, responseData);
-                editIndex = -1; // Reiniciamos el índice de edición
+                if (editIndex >= 0) { // Si estamos en modo de edición
+                    products[editIndex] = responseData;
+                    updateProductInTable(editIndex, responseData);
+                    editIndex = -1; // Reiniciamos el índice de edición
+                } else {
+                    products.push(responseData);
+                    addProductToTable(responseData);
+                }
             } else {
-                products.push(responseData);
-                addProductToTable(responseData);
+                throw new Error('La respuesta del servidor no es JSON.');
             }
 
             form.reset(); // Limpiamos los campos de entrada
@@ -106,10 +110,15 @@ document.addEventListener("DOMContentLoaded", () => {
                 throw new Error(textData);
             }
 
-            const data = JSON.parse(textData); // Luego intenta analizarlo como JSON
-            products = data;
-            tableBody.innerHTML = ""; // Limpiar la tabla antes de agregar productos
-            products.forEach(product => addProductToTable(product)); // Agrega cada producto a la tabla
+            if (response.headers.get('Content-Type').includes('application/json')) {
+                const data = JSON.parse(textData); // Luego intenta analizarlo como JSON
+                products = data;
+                tableBody.innerHTML = ""; // Limpiar la tabla antes de agregar productos
+                products.forEach(product => addProductToTable(product)); // Agrega cada producto a la tabla
+            } else {
+                throw new Error('La respuesta del servidor no es JSON.');
+            }
+
         } catch (error) {
             console.error('Error al cargar los productos desde la base de datos:', error);
         }
