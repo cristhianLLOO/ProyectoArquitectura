@@ -1,5 +1,4 @@
 <?php
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -16,22 +15,22 @@ return new class extends Migration
         Schema::create('proveedores', function (Blueprint $table) {
             $table->id();
             $table->string('first_name'); // Nombre del proveedor
-            $table->string('last_name'); // Compañía
-            $table->string('email'); // Correo electrónico
-            $table->date('entrega'); // Fecha de entrega
-            $table->string('product'); // Nombre del producto
-            $table->integer('cantidad'); // Cantidad
+            $table->string('company'); // Compañía
+            $table->string('email')->unique(); // Correo electrónico
+            $table->date('delivery_date'); // Fecha de entrega
+            $table->string('product_name'); // Nombre del producto
+            $table->integer('quantity'); // Cantidad
             $table->timestamps(); // created_at y updated_at
         });
-        }
+    }
 
     /**
-  
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-    Schema::dropIfExists('proveedores');
+        Schema::dropIfExists('proveedores');
     }
 };

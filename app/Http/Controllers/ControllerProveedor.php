@@ -1,28 +1,28 @@
 <?php
 
 namespace App\Http\Controllers;
-use app\Models\proveedor;
 
 use Illuminate\Http\Request;
+use App\Models\Proveedor;
 
 class ControllerProveedor extends Controller
 {
     public function store(Request $request)
     {
-        // Validar los datos de entrada
-        $request->validate([
+        // Validación de datos
+        $validated = $request->validate([
             'first_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
+            'company' => 'required|string|max:255',
             'email' => 'required|email|max:255',
-            'entrega' => 'required|date',
-            'product' => 'required|string|max:255',
-            'cantidad' => 'required|integer',
+            'delivery_date' => 'required|date',
+            'product_name' => 'required|string|max:255',
+            'quantity' => 'required|integer',
         ]);
 
-        // Crear un nuevo proveedor
-        $proveedor = Proveedor::create($request->all());
+        // Creación de un nuevo proveedor
+        Proveedor::create($validated);
 
-        // Retornar una respuesta de éxito
-        return response()->json(['message' => 'Proveedor agregado exitosamente'], 201);
+        // Redirección o respuesta
+        return back()->with('message', 'Proveedor agregado exitosamente');
     }
 }
