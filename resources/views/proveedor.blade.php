@@ -15,7 +15,7 @@
         
         <section class="settings">
             <div id="general" class="tab-content active">
-                <form id="add-provider-form" class="form-container" method="POST" action="{{ route('proveedores.store') }}">
+                <form id="add-provider-form" class="form-container" method="POST">
                     @csrf
                     <div class="form-group">
                         <label for="first-name">Nombre del proveedor</label>
@@ -45,13 +45,44 @@
                         <button type="submit" class="add-button">Entregar</button>
                     </div>
                 </form>
-                <div id="message" class="message"></div>
-                <script src="{{ asset('proveedores.js') }}"></script>
+
+                <!-- Mensaje de éxito -->
+                <div id="success-message" class="alert alert-success mt-3" style="display: none;">
+                    Proveedor agregado exitosamente.
+                </div>
+
+                <!-- Mensaje de error -->
+                <div id="error-message" class="alert alert-danger mt-3" style="display: none;">
+                    Hubo un error al agregar el proveedor.
+                </div>
+                
             </div>
         </section>
     </div>
 
+    <!-- jQuery y Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#add-provider-form').on('submit', function (e) {
+                e.preventDefault(); // Previene la acción por defecto del formulario
+
+                $.ajax({
+                    type: 'POST',
+                    url: "{{ route('proveedores.store') }}",
+                    data: $(this).serialize(),
+                    success: function (response) {
+                        $('#success-message').show(); // Muestra el mensaje de éxito
+                        $('#error-message').hide(); // Esconde el mensaje de error
+                        $('#add-provider-form')[0].reset(); // Resetea el formulario
+                    },
+                    error: function (response) {
+                        $('#error-message').show(); // Muestra el mensaje de error
+                        $('#success-message').hide(); // Esconde el mensaje de éxito
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-

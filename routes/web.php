@@ -3,12 +3,20 @@ use App\Http\Controllers\ControllerProveedor;
 use App\Http\Controllers\AlmacenController;
 use Illuminate\Support\Facades\Route;
 
-// Ruta para mostrar el formulario de creación de proveedores
-Route::post('/proveedor', [ControllerProveedor::class, 'store'])->name('proveedores.store');
-
-Route::get('/proveedores', function () {
-    return view('proveedor');
+// Ruta para la página de administración principal
+Route::get('/admin', function () {
+    return view('admin');
 });
+
+// Ruta para mostrar el formulario de creación de proveedores (GET) y para almacenar un nuevo proveedor (POST)
+Route::get('/admin/proveedor', [ControllerProveedor::class, 'create'])->name('proveedores.create');
+Route::post('/admin/proveedor', [ControllerProveedor::class, 'store'])->name('proveedores.store');
+
+// Ruta para mostrar la lista de proveedores
+Route::get('/proveedores', [ControllerProveedor::class, 'index'])->name('proveedores.index');
+
+// Ruta para mostrar la tabla de productos en el almacén
+Route::get('/almacenview', [AlmacenController::class, 'showTable'])->name('almacenview');
 
 // Rutas para las acciones del CRUD de Almacén (usando prefijo API)
 Route::prefix('api')->group(function () {

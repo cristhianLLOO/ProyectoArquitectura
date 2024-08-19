@@ -17,6 +17,16 @@ class AlmacenController extends Controller
         }
     }
 
+    public function showTable()
+    {
+        try {
+            $products = Almacen::all();
+            return view('almacenview', compact('products'));
+        } catch (\Exception $e) {
+            return response()->json(['error' => 'Error al obtener los productos'], 500);
+        }
+    }
+
     public function store(Request $request)
     {
         try {
