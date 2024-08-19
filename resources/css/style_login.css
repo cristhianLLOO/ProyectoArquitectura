@@ -1,0 +1,161 @@
+/* Importar fuentes desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&family=Roboto:wght@400&display=swap');
+
+:root {
+  --primary-color: #3556bb;
+  --secondary-color: #ffffff;
+  --background-color: #f3f4f6;
+  --border-color: #e5e5e5;
+  --input-background: #f9f9f9;
+  --button-hover: #e55347;
+  --form-background: #f5f7fa;
+  --input-border-color: #dcdcdc;
+  --input-shadow: #e0e0e0;
+  --button-active-scale: 0.95;
+  --button-hover-shadow: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(870deg, #3556bb, #ececa4);
+  font-family: "Roboto", sans-serif; /* Fuente para el texto general */
+  animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.title_container .title {
+  font-family: "Poppins", sans-serif; /* Fuente para el título */
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.title_container .subtitle {
+  font-family: "Roboto", sans-serif; /* Fuente para el subtítulo */
+  font-size: 16px;
+  color: #555;
+  text-align: center;
+}
+
+.form_container {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 40px 30px;
+  background: linear-gradient(145deg, #ffebcd, #ffdead);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  border: 2px solid transparent;
+  background: linear-gradient(var(--form-background), var(--form-background)) padding-box,
+              linear-gradient(145deg, transparent 35%, #f08080, #ffd700) border-box;
+  background-size: 200% 100%;
+  animation: gradient 5s ease infinite, zoomInOut 1.5s ease-in-out;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+  50% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.input_field {
+  width: 100%;
+  height: 40px;
+  padding: 0 15px;
+  border-radius: 20px;
+  outline: none;
+  border: 1px solid var(--input-border-color);
+  background-color: var(--input-background);
+  box-shadow: 0px 10px 10px -5px var(--input-shadow);
+  transition: all 0.3s ease;
+  margin-top: 15px;
+}
+
+.input_field:focus {
+  border: 1px solid var(--primary-color);
+  box-shadow: 0px 0px 0px 3px rgba(255, 99, 71, 0.2);
+}
+
+.input_field:hover {
+  border: 1px solid var(--primary-color);
+}
+
+.sign-in_btn {
+  font-family: "Poppins", sans-serif; /* Fuente para los botones */
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  width: 100%;
+  height: 55px;
+  border: 0;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.sign-in_btn:hover {
+  background: var(--button-hover);
+  box-shadow: 0px 4px 8px var(--button-hover-shadow);
+  transform: scale(1.05);
+}
+
+.sign-in_btn:active {
+  transform: scale(var(--button-active-scale));
+}
+
+.social_icons {
+  margin-top: 10px;
+  display: flex;
+  gap: 15px;
+}
+
+.social_icon {
+  color: #555;
+  font-size: 24px;
+  transition: color 0.3s ease;
+}
+
+.social_icon:hover {
+  color: var(--primary-color);
+}
