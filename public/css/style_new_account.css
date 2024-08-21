@@ -1,0 +1,213 @@
+:root {
+    --primary-color: #115DFC;
+    --secondary-color: #ffffff;
+    --background-color: #f1f7fe;
+    --border-color: #e5e5e5;
+    --input-background: #f9f9f9;
+    --button-hover: #0e4ecb;
+    --form-background: #ffffff;
+    --input-border-color: #dcdcdc;
+    --input-shadow: #e0e0e0;
+    --button-active-scale: 0.95;
+    --button-hover-shadow: rgba(0, 0, 0, 0.2);
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #3A8DFF, #D9E1F2);
+    font-family: "Inter", sans-serif;
+    animation: fadeIn 3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form_container {
+    width: 100%;
+    max-width: 900px; /* Aumentamos el tamaño máximo del formulario */
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px; /* Aumentamos el espacio entre los elementos */
+    padding: 70px 60px; /* Aumentamos el padding interno */
+    background-color: var(--form-background);
+    box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.1); /* Aumentamos la sombra */
+    border-radius: 15px; /* Ajustamos el borde redondeado */
+    border: 2px solid transparent;
+    background: linear-gradient(var(--form-background), var(--form-background)) padding-box,
+                linear-gradient(145deg, transparent 35%, #e81cff, #40c9ff) border-box;
+    background-size: 200% 100%;
+    animation: zoomInOut 1.5s ease-in-out, gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+@keyframes zoomInOut {
+    0% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.form_row {
+    display: flex;
+    gap: 40px; /* Aumentamos el espacio entre las columnas */
+    width: 100%;
+}
+
+.campo {
+    width: 100%;
+    text-align: left;
+}
+
+.input_field {
+    width: 100%;
+    height: 60px; /* Aumentamos la altura del campo de entrada */
+    padding: 0 25px; /* Aumentamos el padding */
+    border-radius: 30px; /* Ajustamos el borde redondeado */
+    outline: none;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--input-background);
+    box-shadow: 0px 10px 10px -5px var(--input-shadow);
+    transition: all 0.3s ease;
+    font-size: 22px; /* Aumentamos el tamaño de la fuente */
+}
+
+.input_field:focus {
+    border: 1px solid var(--primary-color);
+    box-shadow: 0px 0px 0px 3px rgba(17, 93, 252, 0.2);
+}
+
+.error {
+    color: red;
+    font-size: 16px;
+    height: 18px;
+    margin-top: 8px;
+    display: block;
+}
+
+.cont_btn {
+    width: 100%;
+    margin-top: 40px; /* Aumentamos el margen superior */
+}
+
+.btn_input {
+    width: 100%;
+    padding: 25px; /* Aumentamos el padding del botón */
+    border: none;
+    border-radius: 30px; /* Ajustamos el borde redondeado */
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-size: 22px; /* Aumentamos el tamaño de la fuente */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn_input:hover {
+    background: var(--button-hover);
+    box-shadow: 0px 6px 12px var(--button-hover-shadow); /* Aumentamos la sombra al hacer hover */
+    transform: scale(1.05);
+}
+
+.btn_input:active {
+    transform: scale(var(--button-active-scale));
+}
+
+.login {
+    margin-top: 40px; /* Aumentamos el margen superior */
+}
+
+.redes {
+    margin-top: 40px; /* Aumentamos el margen superior */
+    text-align: center;
+}
+
+.lineas {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Aumentamos el espacio entre las líneas */
+    margin-bottom: 20px; /* Aumentamos el margen inferior */
+}
+
+.lineas_div {
+    flex-grow: 1;
+    height: 2px; /* Aumentamos el grosor de la línea */
+    background-color: #ccc;
+}
+
+.linea__text {
+    color: #555;
+    font-size: 18px; /* Aumentamos el tamaño de la fuente */
+}
+
+.redes__logos {
+    display: flex;
+    gap: 25px; /* Aumentamos el espacio entre los íconos */
+    justify-content: center;
+}
+
+.redes__logos--img {
+    width: 40px; /* Aumentamos el tamaño de los íconos */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.redes__logos--img:hover {
+    transform: scale(1.1);
+}
+
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.input_password {
+    padding-right: 50px; /* Aumentamos el padding para el ícono */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.toggle-password i {
+    font-size: 24px; /* Aumentamos el tamaño del ícono */
+    transition: transform 0.3s ease;
+}
+
+.toggle-password i.rotate {
+    transform: rotate(360deg);
+}

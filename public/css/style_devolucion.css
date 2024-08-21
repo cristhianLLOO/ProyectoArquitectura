@@ -1,0 +1,101 @@
+.box{
+    display: block;
+}
+.datos_devolcuion{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+}
+.producto__title{
+    color: #2C52A5;
+    font-family: 'Rajdhani', sans-serif;
+}
+.circulo{
+    border-radius: 100%;
+    height: 20px;
+    width: 20px;
+    background-color: gray;
+}
+.conjunto,
+.producto__info{
+    display: flex;
+    align-items: center;
+}
+.producto{
+    display: grid;
+    gap: 20px;
+}
+.producto__precio{
+    text-align: end;
+}
+.recomendado{
+    background-color: #2C52A5;
+    margin-right: 5px;
+    padding: 4px;
+}
+.recomendado p{
+    color: white;
+    font-weight: 400;
+}
+.ciruclo--activo{
+    background-color: #2C52A5;
+}
+.recomendado--text{
+    color: #2C52A5;
+    font-size: 20px;
+}
+.circulo{
+    margin-right: 5px;
+}
+.conjunto2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+}
+.conjunto2 p{
+    display: inline-block;
+    font-size: 20px;
+}
+.confirmar__btn{
+    background-color: #2C52A5;
+    padding: 10px 20px;
+    border-radius: 10px;
+    font-size: 20px;
+}   
+.azul{
+    color: blue;
+}
+.producto p{
+    font-size: 20px;
+}
+.confirmar__btn p{
+    color: white;
+    text-transform: uppercase;
+    font-weight: 400;
+    text-align: center;
+}
+.confirmar__fecha{
+    text-align: center;
+    margin-bottom: 20px;
+}
+.confirmar{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.precio{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-size: 20px;
+}
+.resumen{
+    font-size: 20px;
+}
+@media (max-width: 890px){
+    .datos_devolcuion{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+}

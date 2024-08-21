@@ -1,0 +1,140 @@
+.barr_busqueda{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-right: 20px;
+}
+.user__img{
+    max-width: 50px;
+}
+.user{
+    display: inline;
+}
+.nav-categorias{
+    max-width: 80%;
+    margin: 0 auto;
+    display: flex;
+    gap: 25px;
+    background-color: #2C52A5;
+    
+}
+.cat__text{
+    color: white;
+    font-size: 20px;
+}
+.bg-wth{
+    background-color: white;
+    color: #2C52A5;
+    padding: 0 10px;
+    height: 100%;
+}
+.ap{
+    margin: 0;
+    background-color: white;
+}
+.dropdown{
+    display: none;
+    max-width: 80%;
+    margin: 0 auto;
+}
+.producto{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+}
+.img{
+    max-width: 700px;
+    display: flex;
+    justify-content: flex-end;
+    margin-right: 20px;
+}
+.img img{
+    max-width: 400px;
+    max-height: 400px;
+}
+.info__precio{
+    margin-bottom: 20px;
+}
+.info__btn{
+    background-color: transparent;
+    border-radius: 20px;
+    padding: 8px 7px;
+    margin-bottom: 20px;
+}
+
+.carrito{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    margin-bottom: 20px;
+}
+.info__btn--carrito{
+    background-color: #2C52A5;
+    padding: 5px 10px;
+    color: white;
+    border-radius: 10px;
+    border: none;
+    font-size: 25px;
+    font-family: 'Rajdhani', sans-serif;
+}
+.descripcion{
+    background-color: #E7EFFF;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+}
+.box{
+    display: block;
+    max-width: 80%;
+    padding: 30px;
+}
+.cantidad{
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    align-items: center;
+}
+.img_love{
+    max-width: 50px;
+}
+@media (max-width:1350px){
+    .nav-categorias{
+        display: none;
+    }
+    .dropdown{
+        display: block;
+    }
+    .bg-wth{
+        display: block;
+    }
+    .nav-categorias{
+        background-color: transparent;
+    }
+    .ap__img{
+        width: 50px;
+    }
+    .ap{
+        display: flex;
+    }
+}
+@media (max-width: 576px) {
+    .container-fluid{
+        flex-direction: row;
+    }
+    .descripcion{
+        max-width: 100%;
+    }
+}
+@media (max-width: 995px) {
+    .producto{
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+    }
+}
+@media (max-width: 930px){
+    .barr_busqueda{
+        flex-direction: column;
+        align-items: center;
+    }
+    .container-fluid{
+        flex-direction: column;
+    }
+}

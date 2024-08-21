@@ -1,0 +1,54 @@
+.box{
+    width: 50%;
+    display: block;
+}
+.formas_pago{
+    margin-top: 30px;
+    display: grid;
+    justify-items: center;
+    gap: 10px;
+    padding: 30px;
+    background-color: #E7EFFF;
+}
+.forma_pago{
+    background-color: #2C52A5;
+    width: 100%;
+    padding: 10px;
+}
+.forma_pago p{
+    color: white;
+    font-weight: 500;
+}
+.pago__titulo{
+    color: #2C52A5;
+}
+.pago__titulo--2{
+    margin-top: 20px;
+}
+.otras_formas{
+    margin-top: 0;
+}
+@media (max-width: 736px){
+    .box{
+        width: 80%;
+    }
+}
+
+.ticket {
+    border: 1px solid #4CAF50;
+    padding: 20px;
+    margin-top: 20px;
+    background-color: #dff0d8;
+    color: #3c763d;
+    text-align: center;
+}
+
+.ticket img {
+    margin-bottom: 20px;
+}
+
+.codigo-barras img {
+    margin-top: 20px;
+    width: 100%;
+    max-width: 300px;
+}
