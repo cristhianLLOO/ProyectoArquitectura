@@ -1,0 +1,163 @@
+.redes__logos--foot{
+    max-width: 100px;
+}
+.logos_foot{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+}
+.part1{
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+}
+.nav{
+    justify-content: space-between;
+}
+.box{
+    max-width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 40px;
+}
+.pedidos{
+    background-color: #E8EEFE;
+    display: grid;
+    grid-template-rows: auto;
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 30px 0;
+}
+.section{
+    max-width: 90%;
+    margin: 0 auto;
+}
+.pedidos__titulo{
+    color: #2C52A5;
+    text-align: center;
+    font-size: 35px;
+}
+.pedidos__btn{
+    background-color: #2C52A5;
+    border-radius: 10px;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+}
+.pedidos__text{
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center;
+}
+.favoritos{
+    margin: 20px 0 0 0;
+}
+.favoritos__titulo{
+    text-transform: uppercase;
+    color: #2C52A5;
+    text-align: center;
+    padding: 20px;
+}
+.favoritos__text{
+    text-transform: uppercase;
+    color: white;
+    font-size: 25px;
+    font-weight: 600;
+}
+.favoritos__link{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+}
+.fav_mas{
+    background-color: #2C52A5;
+    padding: 6px 12px;
+    display: flex;
+    justify-content: space-between;
+}
+.galeria{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 9px;
+    background-color: #E8EEFE;
+    padding: 40px 5px;
+}
+
+.usuario{
+    background-color: #E8EEFE;
+    margin-top: 20px;
+    padding: 4px 15px 50px 15px;
+    margin-bottom: 40px;
+}
+.usuario__img--div{
+    display: flex;
+    justify-content: center;
+}
+.usuario__img{
+    max-width: 200px;
+}
+.usuario__titulo{
+    font-size: 40px;
+    text-align: center;
+}
+.usuario__text{
+    font-size: 20px;
+}
+.usuario__box{
+    border: 1px solid black;
+    padding: 5px 3px;
+    margin-top: 16px;
+}
+.usuario__text--apodo{
+    text-align: center;
+}
+.usuario__link{
+    color: #2C52A5;
+    display: flex;
+    justify-content: end;
+    font-weight: bold;
+}
+.foot{
+    grid-template-columns: repeat(3, 1fr);
+}
+@media (max-width: 1040px) {
+    .foot{
+        grid-template-columns: none;
+        grid-template-rows: repeat(3,1fr);
+        padding: 0;
+    }
+    .logo{
+        text-align: center;
+    }
+    .links_foot{
+        justify-content: center;
+    }
+    footer {
+        position: relative;
+    }
+    .redes__logos--foot{
+        width: 70px;
+    }
+    .logos_foot{
+        gap: 5px;
+    }
+}
+.nav-item{
+    margin-right: 20px;
+}
+.princp{
+    display: flex;
+    align-items: center;
+}
+
+.navbar-collapse{
+    justify-content: flex-end
+}
+@media (max-width: 768px) {
+    .part1{
+        align-items: center;
+    }
+}
